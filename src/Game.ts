@@ -56,7 +56,7 @@ export class Game {
 
     if (this.board.isGameOver()) {
       // Send the game over message to both players
-      this.player1.emit(
+      this.player1.send(
         JSON.stringify({
           type: GAME_OVER,
           payload: {
@@ -64,7 +64,7 @@ export class Game {
           },
         })
       );
-      this.player2.emit(
+      this.player2.send(
         JSON.stringify({
           type: GAME_OVER,
           payload: {
